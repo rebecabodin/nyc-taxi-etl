@@ -9,17 +9,24 @@ __pycache__/
 .env
 .env.*
 
+# Dados brutos e saídas auxiliares
 data/raw/*
-data/processed/*
 data/output/*
 
+# Manter estrutura das pastas
 !data/raw/.gitkeep
-!data/processed/.gitkeep
 !data/output/.gitkeep
 
+# Ignorar arquivos pesados/brutos
 *.csv
 *.zip
-*.parquet
+
+# Permitir Parquet tratados para deploy do dashboard
+!data/
+!data/processed/
+data/processed/*
+!data/processed/*.parquet
+!data/processed/.gitkeep
 
 .DS_Store
 Thumbs.db
